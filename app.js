@@ -216,7 +216,7 @@ function doCalc() {
 То есть ваша задача выводить слово «рубль» в правильном падеже, в зависимости от введенного числа. */
 function getRubleEnding(rubles_amount) {
     if (rubles_amount % 100 > 10 && rubles_amount % 100 < 20) {
-        return 'рублей'
+        return 'рублей';
     } else {
         switch (rubles_amount % 10) {
             case 1:
@@ -232,6 +232,6 @@ function getRubleEnding(rubles_amount) {
 }
 function makeDeposit() {
     let rubles_amount = +document.getElementById('rubles_amount').value;
-    operation_result = `Ваша сумма ${rubles_amount} ${getRubleEnding(rubles_amount)} успешно зачислена.`;
+    let operation_result = `Ваша сумма ${rubles_amount} ${getRubleEnding(rubles_amount)} успешно зачислена.`;
     document.getElementById('operation_result').value = operation_result;
 }

@@ -235,3 +235,27 @@ function makeDeposit() {
     let operation_result = `Ваша сумма ${rubles_amount} ${getRubleEnding(rubles_amount)} успешно зачислена.`;
     document.getElementById('operation_result').value = operation_result;
 }
+
+//Начинаем ДЗ№3
+
+/* С помощью цикла for написать алгоритм для вывода чисел (выводите в консоль, с помощью console.log) от 0 до 10 включительно, чтобы результат выглядел так:
+0 – это ноль
+1 – нечетное число
+2 – четное число
+3 – нечетное число
+…
+10 – четное число */
+
+function getNumberDescription(number) {
+    if (number % 2) {
+        return "нечетное число";
+    } else {
+        return "четное число";
+    }
+}
+
+let number_description = null;
+for (let i = 0; i <= 10; i++) {
+    number_description = (i == 0) ? "это ноль" : getNumberDescription(i);
+    console.log(`${i} - ${number_description}`);
+}

@@ -316,3 +316,92 @@ const products = [
         price: 1000,
     },
 ];
+
+products.forEach(function (product) {
+    product.price *= 0.85;
+});
+for (let pr of products) {
+    console.log(pr);
+}
+
+// Вопрос: А есть ли смысл объявлять такую константу? 
+
+
+// Задание 4
+
+/* Перед вами находится массив с продуктами в интернет-магазине. Вам нужно:
+1. Получить все товары, у которых есть фотографии, можете использовать метод filter
+2. Отсортируйте товары по цене (от низкой цены к высокой), можете использовать метод sort,
+*/
+
+const products2 =
+    [
+        {
+            id: 3,
+            price: 127,
+            photos: ["1.jpg", "2.jpg",]
+        },
+        {
+            id: 5,
+            price: 499,
+            photos: []
+        },
+        {
+            id: 10,
+            price: 26,
+            photos: ["3.jpg"]
+        },
+        {
+            id: 8,
+            price: 78,
+        },
+    ];
+
+let productsWithPhotos = products2.filter(function (product) {
+    if (Boolean(product.photos)) {
+        return Boolean(product.photos[0])
+    } else { return false; }
+});
+console.log(productsWithPhotos);
+
+products2.sort(function compareProduct(pr1, pr2) {
+    if (pr1.price > pr2.price) {
+        return 1;
+    };
+    if (pr1.price < pr2.price) {
+        return -1;
+    }
+    return 0;
+})
+
+console.log(products2);
+
+// Задание 5
+
+/*(По желанию, т.к. такая особенность практически не используется) Вывести с помощью цикла 
+for числа от 0 до 9, НЕ используя тело цикла. То есть выглядеть должно примерно так:
+for(…){/* здесь пусто } 
+Помните, что в первом, втором и третьем раздела цикла можно не только писать условия, или 
+увеличивать счетчик например на 1, допустимы любые выражения, например вызовы функций.*/
+
+function printWithoutBody(i) {
+    console.log(i);
+    return ++i;
+}
+
+for (let i = 0; i < 10; i = printWithoutBody(i)) { };
+
+//упростил, когда понял, что через "запятую можно команды добавлять"
+
+for (let i = 0; i < 10; console.log(i), i++) { };
+
+// Задание 6
+
+/* Нарисовать горку с помощью console.log (используя цикл for), как показано на рисунке,
+только у вашей горки должно быть 20 рядов, а не 5 */
+
+let xxxStr = ''
+for (let i = 0; i < 20; i++) {
+    xxxStr += 'x';
+    console.log(xxxStr);
+};

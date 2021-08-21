@@ -424,16 +424,32 @@ hundreds: 0, //это сотни
 Если число было передано вне [0, 999] диапазона, не целое число или вообще не число,
 необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект. */
 
+// Решил создать метод, который число будет раскидывать по разрядам в объекте, 
+// где по умолчанию пустые свойства - разряды.
 function NumObj(units = null, tens = null, hundereds = null) {
     this.units = units;
     this.tens = tens;
     this.hundereds = hundereds;
-    NumObj.prototype = function numIntoObj(random_number) {
-        this.units = ramdom_number % 10;
-        this.tens = Math.floor(ramdom_number / 10) % 10;
-        this.tens = Math.floor(ramdom_number / 100);
+    NumObj.prototype.numIntoObj = function (random_number) {
+        this.units = random_number % 10;
+        this.tens = Math.floor(random_number / 10) % 10;
+        this.hundereds = Math.floor(random_number / 100);
     }
 }
-let ramdom_number = Math.floor(Math.random * 1000);
+let random_number = Math.floor(Math.random() * 1000);
 const obj1 = new NumObj;
-obj1.numIntoObj(ramdom_number);
+obj1.numIntoObj(random_number);
+console.log(random_number);
+console.log(obj1);
+
+// Просто функция, раскидывающая то же число по разрядам объекта.
+
+function numberIntoObj(random_number) {
+    const obj = {};
+    obj.units = random_number % 10;
+    obj.tens = Math.floor(random_number / 10) % 10;
+    obj.hundereds = Math.floor(random_number / 100);
+    return obj;
+}
+
+console.log(numberIntoObj(random_number));

@@ -405,3 +405,35 @@ for (let i = 0; i < 20; i++) {
     xxxStr += 'x';
     console.log(xxxStr);
 };
+
+//Начинаем ДЗ№4
+
+// Задание 1
+
+/* (это задание делайте по желанию) Написать функцию, преобразующую число в объект. Передавая на вход число в диапазоне [0, 999],
+мы должны получить на выходе объект, в котором в соответствующих свойствах описаны разряды числа:
+- единицы (в свойстве units)
+- десятки (в свойстве tens)
+- сотни (в свойстве hundereds)
+Например, для числа 45 мы должны получить следующий объект:
+{
+units: 5, //это единицы
+tens: 4, //это десятки
+hundreds: 0, //это сотни
+}
+Если число было передано вне [0, 999] диапазона, не целое число или вообще не число,
+необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект. */
+
+function NumObj(units = null, tens = null, hundereds = null) {
+    this.units = units;
+    this.tens = tens;
+    this.hundereds = hundereds;
+    NumObj.prototype = function numIntoObj(random_number) {
+        this.units = ramdom_number % 10;
+        this.tens = Math.floor(ramdom_number / 10) % 10;
+        this.tens = Math.floor(ramdom_number / 100);
+    }
+}
+let ramdom_number = Math.floor(Math.random * 1000);
+const obj1 = new NumObj;
+obj1.numIntoObj(ramdom_number);

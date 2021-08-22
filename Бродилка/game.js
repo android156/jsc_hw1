@@ -13,13 +13,18 @@ let game = {
                 console.log("Игра окончена.");
                 return;
             }
+
             // Получаем следующую точку пользователя в зависимости от направления.
             const nextPoint = mover.getNextPosition(direction);
-            
-            renderer.clear();
             player.move(nextPoint);
+
+            if (player.touchingWall) {
+                alert('Врезались в стену! Попробуйте переместиться в другую сторону.');
+                continue;
+            }
+            renderer.clear();
             renderer.render();
-           
+
         }
     },
 

@@ -2,3 +2,8 @@
     margin: 0;
     padding: 0;
   }
+
+  .text {
+    font-size: 20;
+    font-style: italic;
+  }

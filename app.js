@@ -514,7 +514,7 @@ Post.prototype.edit = function (random_text) {
 }
 
 function AttachedPost(author, text, date) {
-    Post.call(author, text, date);
+    Post.call(this, author, text, date);
     this.highlighted = false;
 }
 AttachedPost.prototype = Object.create(Post.prototype);
@@ -523,8 +523,36 @@ AttachedPost.prototype.makeTextHighlighted = function () {
     this.highlighted = true;
 }
 
-const post1 = new Post("Дядя коля", "Пустой текст", "22.08.21");
-const post1.edit("Новый текст");
-attached_post1 = new AttachedPost("Василий", "Блаженный", "01.01.1569");
+const post1 = new Post("Дядя коля", "Пустой текст", "22.08.2021");
+post1.edit("Новый текст");
+const attached_post1 = new AttachedPost("Василий", "Блаженный", "01.01.1569");
 attached_post1.edit("Апгрейженный");
 attached_post1.makeTextHighlighted();
+
+
+class Post_ES6 {
+    constructor(author, text, date) {
+        this.author = author;
+        this.text = text;
+        this.date = date;
+    }
+    edit = function (random_text) {
+        this.text = random_text;
+    }
+}
+
+class AttachedPost_ES6 extends Post_ES6 {
+    constructor(author, text, date) {
+        super(author, text, date);
+        this.highlighted = false;
+    }
+    makeTextHighlighted = function () {
+        this.highlighted = true;
+    }
+}
+
+const postES6_1 = new Post_ES6("Иван", "Дурак", "01.06.1000");
+postES6_1.edit("Самый умный");
+const attached_post_ES6_1 = new AttachedPost_ES6("Владимир II", "Благословенный", "01.06.2000");
+attached_post_ES6_1.edit("Царь");
+attached_post_ES6_1.makeTextHighlighted();

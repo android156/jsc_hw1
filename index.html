@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <script defer src="./app.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
-    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Так сложилось, что все ДЗ по JS стал делать в одном файле(((</title>
 </head>
+
 <body>
-    <script src="./app.js"></script>
+    <div class="text">Так сложилось, что все ДЗ по JS стал делать в одном файле(((</div>
+    <hr><br>
+    <form class="form1" action="#">
+        <input id="tempC" class="tempC" type="text" placeholder="Температура &#176;C">
+        <button type="button" onclick="calcCtoF()">Перевести в &#176;F</button><br>
+        <input id="tempF" class="tempF" type="text" placeholder="Температура &#176;F">
+        <button type="button" onclick="calcCtoC()">Перевести в &#176;C</button><br>
+    </form>
+    <br>
+    <form class="form2" action="#">
+        <input id="num1" class="input_form" type="text" placeholder="число1">
+        <input id="num2" class="input_form" type="text" placeholder="число2">
+        <button type="button" onclick="putNewNumbers()">Другие числа </button>
+        <button type="button" onclick="startMagic()">Магия!!!</button><br>
+        <textarea id="result_text" name="Результат" cols="30" rows="10"
+            disabled>Если числа выше положительные, вывести сюда их разность (ноль можно считать положительным числом). Eсли они отрицательные, вывести их произведение. * (этот пункт по сложнее, делайте по желанию) если числа разных знаков, вывести их сумму.</textarea>
+    </form>
+    <br>
+    <form class="form3" action="#">
+        <input id="arg1" class="input_form" type="text" placeholder="Введите число1">
+        <input id="arg2" class="input_form" type="text" placeholder="Введите число2">
+        <input id="operation" class="input_form" type="text" placeholder="Выберите +, -, * или /">
+        <button type="button" onclick="doCalc()">Посчитать</button>
+        <br>
+        <input id="result" class="input_form" type="text" placeholder="Результат" disabled>
+        <br>
+    </form>
+    <br>
+    <form class="form4" action="#">
+        Введите сумму в рублях для пополнения счета<br>
+        <input id="rubles_amount" class="input_form" type="text" placeholder="Сумма зачисления">
+        <button type="reset">Сбросить</button>
+        <button type="button" onclick="makeDeposit()">Пополнить счет</button><br>
+        <textarea id="operation_result" name="Результат" cols="30" rows="10" disabled>Отчет по операции...</textarea>
+    </form>
+
 </body>
+
 </html>

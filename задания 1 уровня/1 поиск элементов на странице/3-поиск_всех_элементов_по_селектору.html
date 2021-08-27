@@ -29,6 +29,12 @@
     и выведите их в консоль. -->
 
     <script>
+        "use strict"
+        let all_card_links = document.querySelectorAll('.card-body>.card-link');
+        all_card_links.forEach(function (card_link) {
+            console.dir(card_link);
+            console.log(card_link.innerText);
+        });
 
     </script>
 </body>

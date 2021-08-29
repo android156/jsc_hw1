@@ -22,7 +22,12 @@
     <!-- Задание. Найдите кнопку с классом .btn-info и сделайте текст в кнопке: "Кнопка".-->
 
     <script>
-        
+        "use strict";
+        // такой один, поэтому так. Иначе в цикле можно было бы всем заменить.
+        let info = document.getElementsByClassName('btn-info');
+        info[0].textContent = "Кнопка";
+        console.dir(info)
+
     </script>
 </body>
 

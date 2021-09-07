@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <button>Кнопка</button>
     <button class="btn">Кнопка с классом btn</button>
@@ -13,8 +15,32 @@
     <!-- Задание. Сделайте, чтобы по клику по кнопке с классом .btn появлялся
     alert('клик') -->
 
+    <!-- Все работает но в консоли высвечивается:
+                
+    Событие onmozfullscreenchange является устаревшим. 3-событие_мыши.html:22:16
+    Событие onmozfullscreenerror является устаревшим. 3-событие_мыши.html:22:16
+    click { target: button.btn, buttons: 0, clientX: 152, clientY: 25, layerX: 152, layerY: 25 }
+    3-событие_мыши.html:25:29
+    Свойство MouseEvent.mozPressure является устаревшим. Для его замены используйте PointerEvent.pressure. 3-событие_мыши.html:26:16
+    click { target: button.btn, buttons: 0, clientX: 138, clientY: 26, layerX: 138, layerY: 26 }
+    3-событие_мыши.html:25:29    
+    
+    -->
+    <!--Не понял, что является устаревшим и насколько это страшно-->
+
     <script>
-        
+        "use strict";
+        let buttons = document.querySelectorAll('button');
+        buttons.forEach(function (button) {
+            if (button.classList.contains('btn')) {
+                button.addEventListener('click', function (event) {
+                    alert('клик');
+                    console.dir(event)
+                })
+
+            }
+        })
     </script>
 </body>
+
 </html>

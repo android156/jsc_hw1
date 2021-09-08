@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div class="one two three"></div>
+    <div class="four five six seven"></div>
 
     <!-- 
     Задание.
@@ -14,9 +17,20 @@
     2. Создайте переменную classes, и в нее сохраните значение свойства classList.
     3. C помощью forEach переберите classes и выведите каждый класс в консоль.
      -->
-
+    <!-- Усложнил задачу для кучи div'ов-->
     <script>
-        
+        "use strict";
+        let div = document.getElementsByTagName('div');
+        console.dir(div);
+        let classes = [];
+        for (let i = 0; i < div.length; i++) {
+            classes[i] = div[i].classList;
+            classes[i].forEach(function (class_name) {
+                console.log(class_name)
+            })
+        }
+
     </script>
 </body>
+
 </html>

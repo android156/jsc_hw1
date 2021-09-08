@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <div class="product1 hidden"></div>
+    <div class="product2 sale"></div>
     <div class="product hidden"></div>
 
     <!-- Задание.
@@ -13,5 +17,22 @@
     2. Затем обратитесь к списку классов и с помощью метода contains()
     проверьте есть ли класс hidden у этого тега.
      -->
+
+    <!-- Усложнил задачу для кучи div'ов-->
+    <script>
+        "use strict";
+        function isHidden(div) {
+            if (div.classList.contains('hidden')) {
+                return 'содержит hidden'
+            }
+            return 'не содержит hidden'
+        }
+        let div = document.getElementsByTagName('div');
+        console.dir(div);
+        for (let i = 0; i < div.length; i++) {
+            console.log(`div №${i + 1} ${isHidden(div[i])}`);
+        }
+    </script>
 </body>
+
 </html>

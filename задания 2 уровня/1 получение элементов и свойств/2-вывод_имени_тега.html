@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h3 class="one">Заголовок</h3>
     <a class="one" href="#">ссылка</a>
@@ -15,9 +17,15 @@
     элементов используйте метод. getElementsByClassName() 
     2. С помощью цикла переберите эту коллекцию и выведите в консоль название тега.
     -->
-
+    <!-- Снова два варианта на выбор-->
     <script>
-
+        "use strict";
+        let one_class = document.getElementsByClassName('one');
+        console.dir(one_class);
+        for (let i = 0; i < one_class.length; i++) {
+            console.log(one_class[i].tagName)
+        }
     </script>
 </body>
+
 </html>

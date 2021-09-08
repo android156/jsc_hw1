@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div class="card hidden">
         Lorem ipsum dolor sit.
@@ -23,5 +25,24 @@
     1. Найдите все "карточки" с классом .card.
     2. Проверьте есть ли у карточки класс hidden с помощью метода contains(),
     и если есть, то удалите с помощью метода remove(). -->
+
+    <!-- Странно, что консоль меняет показания первого вывода console.dir. Если после него удалить for,
+    то в выводе будет чередоваться просто card с card hidden, а если for вернуть, то в первом выводе
+    до фора уже везде будет просто card. Т.е. консоль меняет данные объектов после их изменения. Прогнал
+    через отладчик с точками останова, первый вывод не меняется все шикарно, снял точки останова снова 
+    такая же шляпа. Чудеса. Так и не понял, где собака зарыта. Скриншоты в папке "скриншоты странностей"-->
+    <script>
+        "use strict";
+
+        let card_class = document.getElementsByClassName('card');
+        console.dir(card_class);
+        for (let i = 0; i < card_class.length; i++) {
+            if (card_class[i].classList.contains('hidden')) {
+                card_class[i].classList.remove('hidden')
+            }
+        }
+        console.dir(card_class);
+    </script>
 </body>
+
 </html>

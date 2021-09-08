@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <b>Lorem, ipsum.</b>
     <b class="sign">Lorem, ipsum.</b>
@@ -17,9 +20,18 @@
     2. С помощью метода contains() из classList, проверьте, есть ли у тега
     класс sign, и если нет, то тогда добавьте с помощью метода add()
     -->
-
+    <!--Добавил стиль классу sign в style.css он будет перечеркнутый-->
     <script>
-        
+        "use strict";
+        let bolds = document.getElementsByTagName('b');
+        console.dir(bolds);
+        for (let i = 0; i < bolds.length; i++) {
+            if (!bolds[i].classList.contains('sign')) {
+                bolds[i].classList.add('sign')
+            }
+        }
+        console.dir(bolds);
     </script>
 </body>
+
 </html>
